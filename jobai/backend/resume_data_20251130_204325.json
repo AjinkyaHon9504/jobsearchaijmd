@@ -1,0 +1,72 @@
+{
+  "filename": "test_resume.pdf",
+  "processed_at": "2025-11-30T20:43:25.100295",
+  "data": {
+    "contact_info": {
+      "name": "John Doe",
+      "email": "john.doe@example.com",
+      "phone": "+91 9876543210",
+      "location": null,
+      "linkedin": "https://linkedin.com/in/johndoe",
+      "github": "https://github.com/johndoe"
+    },
+    "skills": {
+      "programming_languages": [
+        "Python"
+      ],
+      "web_technologies": [
+        "React",
+        "FastAPI"
+      ],
+      "mobile_development": [],
+      "databases": [],
+      "cloud_devops": [
+        "GitHub"
+      ],
+      "data_science_ai": [],
+      "other_tools": [],
+      "all_skills": [
+        "Python",
+        "React",
+        "FastAPI",
+        "GitHub"
+      ]
+    },
+    "experience": {
+      "total_years": 3.0,
+      "positions": []
+    },
+    "education": [],
+    "projects": [],
+    "job_preferences": {
+      "job_types": [],
+      "preferred_locations": [],
+      "salary_expectation": null,
+      "remote_preference": false
+    },
+    "search_keywords": {
+      "primary_skills": [
+        "Python",
+        "React",
+        "FastAPI",
+        "GitHub"
+      ],
+      "job_titles": [
+        "Frontend Developer",
+        "React Developer",
+        "UI Developer",
+        "DevOps Engineer",
+        "Cloud Engineer"
+      ],
+      "technologies": [
+        "Python",
+        "React",
+        "FastAPI",
+        "GitHub"
+      ],
+      "experience_level": "Mid-Level",
+      "locations": []
+    },
+    "raw_text_preview": "John Doe\njohn.doe@example.com\n+91 9876543210\nExperience: 3 years\nSkills: Python, FastAPI, React, SQL\nLinkedIn: linkedin.com/in/johndoe\nGitHub: github.com/johndoe\nEducation: B.Tech in Computer Science 2020\n\n"
+  }
+}
