@@ -1,0 +1,151 @@
+{
+  "filename": "ajinkyaresume (2).pdf",
+  "processed_at": "2025-12-02T10:11:26.735595",
+  "data": {
+    "contact_info": {
+      "name": "Ajinkya Dipak Hon",
+      "email": "ajinkyahon090504@gmail.com",
+      "phone": "8530251177",
+      "location": "India",
+      "linkedin": "https://linkedin.com/in/ajinkyahon",
+      "github": "https://github.com/AjinkyaHon9504"
+    },
+    "skills": {
+      "programming_languages": [
+        "Dart",
+        "Python",
+        "C",
+        "JavaScript"
+      ],
+      "web_technologies": [
+        "Node.js",
+        "React"
+      ],
+      "mobile_development": [
+        "Flutter"
+      ],
+      "databases": [
+        "Firebase"
+      ],
+      "cloud_devops": [
+        "Git",
+        "GitHub"
+      ],
+      "data_science_ai": [],
+      "other_tools": [
+        "Postman",
+        "Agile",
+        "Scrum",
+        "Jira"
+      ],
+      "all_skills": [
+        "Dart",
+        "Python",
+        "C",
+        "JavaScript",
+        "Node.js",
+        "React",
+        "Flutter",
+        "Firebase",
+        "Git",
+        "GitHub",
+        "Postman",
+        "Agile",
+        "Scrum",
+        "Jira"
+      ]
+    },
+    "experience": {
+      "total_years": 4.6,
+      "positions": [
+        "Institute of Engineer",
+        "Computer Engineer",
+        "Suite\nLead"
+      ]
+    },
+    "education": [
+      {
+        "degree": "b.tech",
+        "year": "2023",
+        "cgpa": null
+      }
+    ],
+    "projects": [
+      "banking portfolio analytics platform | python, sql, power bi, cloud\njul 2025",
+      "developed valuation models and profitability dashboards simulating retail/corporate portfolio analytics with predictive ml models",
+      "implemented interactive reporting in power bi enabling root-cause analysis and customer segmentation insights\ndigital operations automation (homely) | react.js, firebase, payment apis\nsep 2024",
+      "automated workflows and reporting with integrated dashboards, reducing manual operations by 30%",
+      "deployed real-time mis tracking for transactions and operational kpis\nicanworkon – ai-enabled workforce scheduler | flutter, node.js, firebase\njul 2025",
+      "applied predictive scheduling algorithms for workforce optimization; projected adoption among 10k+ smbs",
+      "secured simulated funding of 6+ lakhs by presenting a data-driven business case with predictive analytics\nfinalist – innokshetra, nit kurukshetra\nsep 2024",
+      "ranked top 5 among 450+ teams for innovative product analytics pitch\nexecutive committee member – thapar food festival\njan 2025 – may 2025",
+      "led 25+ member team applying data insights to content strategy, generating 300k+ views\nexecutive member – microsoft learn student chapter\nsep 2023 – sep 2024",
+      "organized workshops on analytics, cloud, and emerging technologies, growing participation by 40%\nextra-curricular activities & interests\nactive in sports and creative pursuits including university-level table tennis, ai-driven content generation, dashboard design, leadership\nand team management, event and brand management, trekking, photography, and video editing."
+    ],
+    "job_preferences": {
+      "job_types": [],
+      "preferred_locations": [
+        "Remote"
+      ],
+      "salary_expectation": null,
+      "remote_preference": true
+    },
+    "search_keywords": {
+      "primary_skills": [
+        "Dart",
+        "Python",
+        "C",
+        "JavaScript",
+        "Node.js",
+        "React",
+        "Flutter",
+        "Firebase",
+        "Git",
+        "GitHub"
+      ],
+      "job_titles": [
+        "Python Engineer",
+        "Dart Developer",
+        "C Developer",
+        "Senior C Developer",
+        "Backend Developer",
+        "Backend Engineer",
+        "Mobile App Developer",
+        "Python Developer",
+        "Senior Python Developer",
+        "App Developer",
+        "Flutter Engineer",
+        "React.js Developer",
+        "UI Developer",
+        "JavaScript Developer",
+        "Mobile Developer",
+        "React Developer",
+        "Cross-Platform Developer",
+        "Mobile Engineer",
+        "Node.js Developer",
+        "Frontend Engineer"
+      ],
+      "technologies": [
+        "Dart",
+        "Python",
+        "C",
+        "JavaScript",
+        "Node.js",
+        "React",
+        "Flutter",
+        "Firebase",
+        "Git",
+        "GitHub",
+        "Postman",
+        "Agile",
+        "Scrum",
+        "Jira"
+      ],
+      "experience_level": "Mid-Level",
+      "locations": [
+        "Remote"
+      ]
+    },
+    "raw_text_preview": "Ajinkya Dipak Hon\n8530251177 | ajinkyahon090504@gmail.com | linkedin.com/in/ajinkyahon | github.com/AjinkyaHon9504\nEducation\nThapar Institute of Engineering & Technology, Patiala\nAug 2023 – Present\nB.Tech in Electronics and Computer Engineering (ECE-Comp)\nCGPA: 7.91/10\nExperience\nMoneyChoiceCapital (CA, USA)\nJun 2025 – Present\nApplication Development Intern\nRemote\n• Designed predictive analytics modules and real-time dashboards on cloud infrastructure (Firebase/Node.js), reducing decision-making\ntime by 30%\n• Performed portfolio analytics for 50+ SMB clients enabling $1M+ transaction throughput with improved financial risk insights\n• Collaborated with cross-functional teams to test ML-based recommendation engines for customer acquisition strategies\nCosa Nostra, Live Empire Ent\nApr 2025 – Jun 2025\nProduct & Business Analytics Intern\nRemote\n• Analyzed 15K+ engagement data points to identify trends, driving 1M+ organic reach in 30 days through data-informed product\nstrategies\n• Created MI"
+  }
+}

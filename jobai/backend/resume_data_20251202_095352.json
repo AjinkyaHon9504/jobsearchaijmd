@@ -1,0 +1,154 @@
+{
+  "filename": "resume.pdf",
+  "processed_at": "2025-12-02T09:53:52.157706",
+  "data": {
+    "contact_info": {
+      "name": "Ajinkya Dipak Hon",
+      "email": "ajinkyahon090504@gmail.com",
+      "phone": "8530251177",
+      "location": "India",
+      "linkedin": "https://linkedin.com/in/ajinkyahon",
+      "github": "https://github.com/AjinkyaHon9504"
+    },
+    "skills": {
+      "programming_languages": [
+        "Dart",
+        "Python",
+        "C",
+        "JavaScript"
+      ],
+      "web_technologies": [
+        "React",
+        "Express",
+        "Node.js"
+      ],
+      "mobile_development": [
+        "Flutter"
+      ],
+      "databases": [
+        "PostgreSQL",
+        "Firebase",
+        "MySQL"
+      ],
+      "cloud_devops": [
+        "Docker",
+        "AWS",
+        "Git",
+        "CI/CD",
+        "GitHub"
+      ],
+      "data_science_ai": [],
+      "other_tools": [
+        "Postman",
+        "Agile",
+        "Microservices"
+      ],
+      "all_skills": [
+        "Dart",
+        "Python",
+        "C",
+        "JavaScript",
+        "React",
+        "Express",
+        "Node.js",
+        "Flutter",
+        "PostgreSQL",
+        "Firebase",
+        "MySQL",
+        "Docker",
+        "AWS",
+        "Git",
+        "CI/CD",
+        "GitHub",
+        "Postman",
+        "Agile",
+        "Microservices"
+      ]
+    },
+    "experience": {
+      "total_years": 4.6,
+      "positions": [
+        "Institute of Engineer",
+        "Computer Engineer",
+        "App Developer",
+        "Media Lead",
+        "P\nLead"
+      ]
+    },
+    "education": [
+      {
+        "degree": "b.tech",
+        "year": "2023",
+        "cgpa": null
+      }
+    ],
+    "projects": [
+      "icanworkon – ai-enabled workforce scheduler | flutter, node.js, firebase\njul 2025",
+      "built predictive scheduling algorithms and microservice-based backend apis enabling smart workforce allocation.",
+      "implemented real-time sync with cloud functions for scalability, targeting 10k+ smbs.\ndigital operations automation (homely) | react.js, firebase, payment apis\nsep 2024",
+      "built responsive frontend components and automated backend workflows, cutting manual operations by 30%.",
+      "integrated secure transaction systems using rest apis and cloud storage for real-time mis reporting.\nbanking portfolio analytics platform | python, sql, power bi, cloud\njul 2025",
+      "developed predictive portfolio valuation and profitability dashboards leveraging optimized sql queries.",
+      "secured simulated funding of 6l+ by presenting a data-driven business case powered by predictive analytics and digital automation.\nfinalist – innokshetra, nit kurukshetra\nsep 2024",
+      "ranked top 5 among 450+ teams for an innovative product analytics and full-stack development pitch.\nexecutive committee member – thapar food festival\njan 2025 – may 2025",
+      "led a 25+ member media team, applying data insights to content strategy, generating 300k+ impressions.\nexecutive member – microsoft learn student chapter\nsep 2023 – sep 2024",
+      "organized workshops on cloud, apis, and modern app development, boosting participation by 40%.\nextra-curricular activities & interests\nactive in university-level table tennis, ai-driven content creation, full-stack app design, dashboard development, team management, and\ncreative technology including photography and video editing."
+    ],
+    "job_preferences": {
+      "job_types": [],
+      "preferred_locations": [
+        "Remote"
+      ],
+      "salary_expectation": null,
+      "remote_preference": true
+    },
+    "search_keywords": {
+      "primary_skills": [
+        "Dart",
+        "Python",
+        "C",
+        "JavaScript",
+        "React",
+        "Express",
+        "Node.js",
+        "Flutter",
+        "PostgreSQL",
+        "Firebase"
+      ],
+      "job_titles": [
+        "Frontend Developer",
+        "React Developer",
+        "UI Developer",
+        "Backend Developer",
+        "Node.js Developer",
+        "Mobile Developer",
+        "App Developer",
+        "Flutter Developer",
+        "DevOps Engineer",
+        "Cloud Engineer"
+      ],
+      "technologies": [
+        "Dart",
+        "Python",
+        "C",
+        "JavaScript",
+        "React",
+        "Express",
+        "Node.js",
+        "Flutter",
+        "PostgreSQL",
+        "Firebase",
+        "MySQL",
+        "Docker",
+        "AWS",
+        "Git",
+        "CI/CD"
+      ],
+      "experience_level": "Mid-Level",
+      "locations": [
+        "Remote"
+      ]
+    },
+    "raw_text_preview": "Ajinkya Dipak Hon\n8530251177 | ajinkyahon090504@gmail.com | linkedin.com/in/ajinkyahon | github.com/AjinkyaHon9504\nEducation\nThapar Institute of Engineering & Technology, Patiala\nAug 2023 – Present\nB.Tech in Electronics and Computer Engineering (ECE-Comp)\nCGPA: 7.91/10\nExperience\nMoneyChoiceCapital (CA, USA)\nJun 2025 – Present\nApplication Development Intern\nRemote\n• Developed and maintained scalable RESTful APIs using Node.js and Firebase, improving real-time data transfer and system\nreliability.\n• Designed responsive UI components and integrated backend workflows, reducing decision latency by 30%.\n• Collaborated with cross-functional teams to implement cloud-based data pipelines, supporting $1M+ client transaction\nthroughput.\nCosa Nostra, Live Empire Ent.\nApr 2025 – Jun 2025\nProduct & Business Analytics Intern\nRemote\n• Analyzed 15K+ engagement data points to identify trends, driving 1M+ organic reach in 30 days through data-informed product\nstrategies.\n• Created MIS-style performance "
+  }
+}

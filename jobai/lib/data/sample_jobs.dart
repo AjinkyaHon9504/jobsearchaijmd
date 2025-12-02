@@ -3,6 +3,7 @@ import '../models/job.dart';
 
 final List<Job> sampleJobs = [
   Job(
+    id: 'sample_1',
     title: 'Senior Flutter Developer',
     company: 'TechCorp Inc',
     location: 'Remote',
@@ -14,6 +15,7 @@ final List<Job> sampleJobs = [
     logoColor: Colors.blue,
   ),
   Job(
+    id: 'sample_2',
     title: 'Mobile App Developer',
     company: 'StartupHub',
     location: 'San Francisco, CA',
@@ -25,6 +27,7 @@ final List<Job> sampleJobs = [
     logoColor: Colors.purple,
   ),
   Job(
+    id: 'sample_3',
     title: 'Frontend Developer',
     company: 'WebSolutions',
     location: 'New York, NY',
@@ -36,6 +39,7 @@ final List<Job> sampleJobs = [
     logoColor: Colors.orange,
   ),
   Job(
+    id: 'sample_4',
     title: 'Full Stack Developer',
     company: 'DataDrive',
     location: 'Austin, TX',

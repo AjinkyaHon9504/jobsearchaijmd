@@ -37,13 +37,19 @@ class _MainScreenState extends State<MainScreen> {
         index: _selectedIndex,
         children: [
           ChatbotPage(
-            key: ValueKey('chatbot-${_uploadedResume?.contactInfo.email ?? "empty"}'),
+            key: ValueKey(
+              'chatbot-${_uploadedResume?.contactInfo.email ?? "empty"}',
+            ),
             initialResumeData: _uploadedResume,
             uploadedFileName: _uploadedFileName,
             onResumeCleared: _onResumeCleared,
           ),
           DashboardPage(
+            key: ValueKey(
+              'dashboard-${_uploadedResume?.contactInfo.email ?? "empty"}',
+            ),
             onUpload: _onResumeUploaded,
+            resumeData: _uploadedResume, // Pass resume data to fetch jobs
           ),
         ],
       ),

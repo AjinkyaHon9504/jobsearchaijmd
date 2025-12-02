@@ -436,6 +436,11 @@ def extract_resume_data(pdf_content: bytes) -> Dict:
 # KEYWORD GENERATION FOR JOB SEARCH
 # ============================================================
 
+"""
+Enhanced keyword generation for job search
+Generates MORE job titles based on skills
+"""
+
 def generate_search_keywords(resume_data: Dict) -> Dict[str, List[str]]:
     """
     Generate keywords for job search based on resume data
@@ -445,7 +450,7 @@ def generate_search_keywords(resume_data: Dict) -> Dict[str, List[str]]:
     """
     
     search_keywords = {
-        'primary_skills': resume_data['skills']['all_skills'][:10],  # Top 10 skills
+        'primary_skills': resume_data['skills']['all_skills'][:10],
         'job_titles': [],
         'technologies': [],
         'experience_level': '',
@@ -465,25 +470,153 @@ def generate_search_keywords(resume_data: Dict) -> Dict[str, List[str]]:
     
     # Generate job titles based on skills
     skills = resume_data['skills']
+    job_titles = set()  # Use set to avoid duplicates
     
+    # Programming Languages
+    if skills['programming_languages']:
+        for lang in skills['programming_languages'][:3]:
+            job_titles.add(f'{lang} Developer')
+            if years >= 3:
+                job_titles.add(f'Senior {lang} Developer')
+        
+        if 'Python' in skills['all_skills']:
+            job_titles.update(['Python Developer', 'Backend Developer', 'Python Engineer'])
+        if 'Java' in skills['all_skills']:
+            job_titles.update(['Java Developer', 'Java Engineer', 'Backend Engineer'])
+        if 'JavaScript' in skills['all_skills']:
+            job_titles.update(['JavaScript Developer', 'Frontend Developer'])
+    
+    # Web Development
     if skills['web_technologies']:
-        if 'React' in skills['all_skills'] or 'Angular' in skills['all_skills']:
-            search_keywords['job_titles'].extend(['Frontend Developer', 'React Developer', 'UI Developer'])
+        if 'React' in skills['all_skills']:
+            job_titles.update([
+                'React Developer', 'Frontend Developer', 'React.js Developer',
+                'UI Developer', 'Frontend Engineer'
+            ])
+        if 'Angular' in skills['all_skills']:
+            job_titles.update(['Angular Developer', 'Frontend Developer', 'UI Developer'])
+        if 'Vue.js' in skills['all_skills']:
+            job_titles.update(['Vue Developer', 'Frontend Developer', 'Vue.js Developer'])
+        
         if 'Node.js' in skills['all_skills']:
-            search_keywords['job_titles'].extend(['Backend Developer', 'Node.js Developer'])
+            job_titles.update([
+                'Node.js Developer', 'Backend Developer', 'Node Developer',
+                'Backend Engineer', 'API Developer'
+            ])
+        if 'Express' in skills['all_skills']:
+            job_titles.update(['Backend Developer', 'Node.js Developer'])
+        
+        # Full Stack
         if len(skills['web_technologies']) > 3:
-            search_keywords['job_titles'].append('Full Stack Developer')
+            job_titles.update([
+                'Full Stack Developer', 'Full Stack Engineer', 
+                'Software Engineer', 'Web Developer'
+            ])
+        
+        # Frameworks
+        if 'Django' in skills['all_skills']:
+            job_titles.update(['Django Developer', 'Python Developer', 'Backend Developer'])
+        if 'Flask' in skills['all_skills']:
+            job_titles.update(['Flask Developer', 'Python Developer'])
+        if 'FastAPI' in skills['all_skills']:
+            job_titles.update(['FastAPI Developer', 'Python Developer', 'API Developer'])
+        if 'Spring Boot' in skills['all_skills']:
+            job_titles.update(['Spring Boot Developer', 'Java Developer'])
+        if 'Next.js' in skills['all_skills']:
+            job_titles.update(['Next.js Developer', 'React Developer', 'Full Stack Developer'])
     
+    # Mobile Development
     if skills['mobile_development']:
-        search_keywords['job_titles'].extend(['Mobile Developer', 'App Developer'])
+        job_titles.update(['Mobile Developer', 'Mobile Engineer', 'App Developer'])
+        
         if 'Flutter' in skills['all_skills']:
-            search_keywords['job_titles'].append('Flutter Developer')
+            job_titles.update([
+                'Flutter Developer', 'Flutter Engineer', 'Mobile App Developer',
+                'Cross-Platform Developer', 'Dart Developer'
+            ])
+        if 'React Native' in skills['all_skills']:
+            job_titles.update([
+                'React Native Developer', 'Mobile Developer', 
+                'Cross-Platform Developer', 'Mobile Engineer'
+            ])
+        if 'Android' in skills['all_skills']:
+            job_titles.update(['Android Developer', 'Android Engineer', 'Mobile Developer'])
+        if 'iOS' in skills['all_skills']:
+            job_titles.update(['iOS Developer', 'iOS Engineer', 'Mobile Developer'])
+        if 'Kotlin' in skills['all_skills']:
+            job_titles.update(['Kotlin Developer', 'Android Developer'])
+        if 'Swift' in skills['all_skills']:
+            job_titles.update(['Swift Developer', 'iOS Developer'])
     
+    # Data Science & AI
     if skills['data_science_ai']:
-        search_keywords['job_titles'].extend(['Data Scientist', 'ML Engineer', 'AI Engineer'])
+        if 'Machine Learning' in skills['all_skills']:
+            job_titles.update([
+                'Machine Learning Engineer', 'ML Engineer', 'AI Engineer',
+                'Data Scientist', 'ML Developer'
+            ])
+        if 'Deep Learning' in skills['all_skills']:
+            job_titles.update(['Deep Learning Engineer', 'AI Engineer', 'ML Engineer'])
+        if 'Data Science' in skills['all_skills']:
+            job_titles.update([
+                'Data Scientist', 'Data Analyst', 'Data Engineer',
+                'ML Engineer', 'Analytics Engineer'
+            ])
+        if 'TensorFlow' in skills['all_skills'] or 'PyTorch' in skills['all_skills']:
+            job_titles.update(['ML Engineer', 'AI Developer', 'Deep Learning Engineer'])
+        if 'NLP' in skills['all_skills']:
+            job_titles.update(['NLP Engineer', 'ML Engineer', 'AI Developer'])
+        if 'Computer Vision' in skills['all_skills']:
+            job_titles.update(['Computer Vision Engineer', 'AI Engineer'])
+        if 'MLOps' in skills['all_skills']:
+            job_titles.update(['MLOps Engineer', 'ML Engineer', 'DevOps Engineer'])
     
+    # Cloud & DevOps
     if skills['cloud_devops']:
-        search_keywords['job_titles'].extend(['DevOps Engineer', 'Cloud Engineer'])
+        if 'AWS' in skills['all_skills']:
+            job_titles.update([
+                'AWS Developer', 'Cloud Engineer', 'DevOps Engineer',
+                'Cloud Architect', 'Solutions Architect'
+            ])
+        if 'Azure' in skills['all_skills']:
+            job_titles.update(['Azure Developer', 'Cloud Engineer', 'DevOps Engineer'])
+        if 'GCP' in skills['all_skills'] or 'Google Cloud' in skills['all_skills']:
+            job_titles.update(['GCP Developer', 'Cloud Engineer', 'DevOps Engineer'])
+        
+        if 'Docker' in skills['all_skills'] or 'Kubernetes' in skills['all_skills']:
+            job_titles.update([
+                'DevOps Engineer', 'Site Reliability Engineer', 'SRE',
+                'Platform Engineer', 'Infrastructure Engineer'
+            ])
+        if 'CI/CD' in skills['all_skills']:
+            job_titles.update(['DevOps Engineer', 'Build Engineer', 'Release Engineer'])
+        if 'Terraform' in skills['all_skills']:
+            job_titles.update(['DevOps Engineer', 'Infrastructure Engineer', 'Cloud Engineer'])
+    
+    # Database
+    if skills['databases']:
+        if 'MongoDB' in skills['all_skills']:
+            job_titles.update(['Backend Developer', 'Database Developer'])
+        if 'PostgreSQL' in skills['all_skills'] or 'MySQL' in skills['all_skills']:
+            job_titles.update(['Backend Developer', 'Database Developer', 'Database Engineer'])
+    
+    # General Software Engineering (if no specific match)
+    if not job_titles:
+        job_titles.update([
+            'Software Developer', 'Software Engineer', 'Application Developer',
+            'Programmer', 'Software Development Engineer'
+        ])
+    
+    # Add experience prefix for senior positions
+    if years >= 5:
+        senior_titles = set()
+        for title in list(job_titles)[:10]:  # Add Senior to top 10
+            if not title.startswith('Senior'):
+                senior_titles.add(f'Senior {title}')
+        job_titles.update(senior_titles)
+    
+    # Convert to list and limit
+    search_keywords['job_titles'] = list(job_titles)[:20]  # Limit to 20 titles
     
     # Technologies for search
     search_keywords['technologies'] = skills['all_skills'][:15]

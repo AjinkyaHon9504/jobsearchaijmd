@@ -1,0 +1,301 @@
+{
+  "filename": "ajinkya resume 2 (1).pdf",
+  "processed_at": "2025-12-02T10:06:48.073178",
+  "data": {
+    "contact_info": {
+      "name": null,
+      "email": null,
+      "phone": null,
+      "location": "India",
+      "linkedin": null,
+      "github": null
+    },
+    "skills": {
+      "programming_languages": [
+        "R",
+        "Dart",
+        "Kotlin",
+        "C",
+        "JavaScript"
+      ],
+      "web_technologies": [
+        "Node.js",
+        "HTML",
+        "React",
+        "Django",
+        "CSS"
+      ],
+      "mobile_development": [
+        "Kotlin",
+        "Flutter"
+      ],
+      "databases": [
+        "Firebase",
+        "MongoDB"
+      ],
+      "cloud_devops": [
+        "GitHub"
+      ],
+      "data_science_ai": [
+        "Machine Learning",
+        "NLP"
+      ],
+      "other_tools": [
+        "Postman"
+      ],
+      "all_skills": [
+        "R",
+        "Dart",
+        "Kotlin",
+        "C",
+        "JavaScript",
+        "Node.js",
+        "HTML",
+        "React",
+        "Django",
+        "CSS",
+        "Flutter",
+        "Firebase",
+        "MongoDB",
+        "GitHub",
+        "Machine Learning",
+        "NLP",
+        "Postman"
+      ]
+    },
+    "experience": {
+      "total_years": 4.0,
+      "positions": [
+        "App Developer",
+        "Media Lead",
+        "Computer Engineer",
+        "T H A PA R . E D U"
+      ]
+    },
+    "education": [
+      {
+        "degree": "bs",
+        "year": null,
+        "cgpa": "15"
+      },
+      {
+        "degree": "be",
+        "year": "2025",
+        "cgpa": null
+      },
+      {
+        "degree": "be",
+        "year": "2023",
+        "cgpa": null
+      },
+      {
+        "degree": "be",
+        "year": "2024",
+        "cgpa": null
+      },
+      {
+        "degree": "be",
+        "year": "2024",
+        "cgpa": null
+      },
+      {
+        "degree": "be",
+        "year": null,
+        "cgpa": null
+      },
+      {
+        "degree": "me",
+        "year": "2025",
+        "cgpa": null
+      },
+      {
+        "degree": "me",
+        "year": "2025",
+        "cgpa": null
+      },
+      {
+        "degree": "me",
+        "year": null,
+        "cgpa": null
+      },
+      {
+        "degree": "me",
+        "year": "2025",
+        "cgpa": null
+      },
+      {
+        "degree": "me",
+        "year": null,
+        "cgpa": null
+      },
+      {
+        "degree": "me",
+        "year": null,
+        "cgpa": null
+      },
+      {
+        "degree": "me",
+        "year": null,
+        "cgpa": null
+      },
+      {
+        "degree": "me",
+        "year": "2025",
+        "cgpa": null
+      },
+      {
+        "degree": "me",
+        "year": "2025",
+        "cgpa": null
+      },
+      {
+        "degree": "me",
+        "year": null,
+        "cgpa": "70"
+      },
+      {
+        "degree": "me",
+        "year": null,
+        "cgpa": null
+      },
+      {
+        "degree": "me",
+        "year": null,
+        "cgpa": null
+      },
+      {
+        "degree": "me",
+        "year": null,
+        "cgpa": "15"
+      },
+      {
+        "degree": "me",
+        "year": null,
+        "cgpa": "15"
+      },
+      {
+        "degree": "me",
+        "year": null,
+        "cgpa": "15"
+      },
+      {
+        "degree": "ms",
+        "year": null,
+        "cgpa": null
+      },
+      {
+        "degree": "me",
+        "year": null,
+        "cgpa": null
+      },
+      {
+        "degree": "me",
+        "year": "2023",
+        "cgpa": null
+      },
+      {
+        "degree": "me",
+        "year": null,
+        "cgpa": null
+      },
+      {
+        "degree": "ms",
+        "year": "2024",
+        "cgpa": null
+      },
+      {
+        "degree": "me",
+        "year": null,
+        "cgpa": null
+      },
+      {
+        "degree": "me",
+        "year": null,
+        "cgpa": null
+      },
+      {
+        "degree": "me",
+        "year": null,
+        "cgpa": null
+      }
+    ],
+    "projects": [
+      "icanworkon | flutter, firebase, nodejs",
+      "developing live shift-scheduling app for employers and employees across it, hospitality, retail, and logistics; \ntargeting $2b+ smb workforce market in india and the us.",
+      "app enables smart shift assignments and communication; projected user base: 10k+ within 6 months \nhomely | reactjs, flutter, firebase",
+      "built flutter app and react website for old age home, enabling real-time management via firebase, \nboosting efficiency by 15%.",
+      "integrated a donation system with razor pay for purchasing items made by residents.  \npositions of responsibility  \n  \nexecutive committee member, thapar food festival                                                                 january 2025 - present",
+      "led 25 cinematographers to generate 300k+ views through audience-focused content strategy.  \nexecutive member, microsoft learning student chapter                                                august 2023 – august 2024",
+      "collaborated with 5 developers to launch college club app, attracting 1k+ monthly users. \n extra-curricular activities and achievements  \nwinner, strategy sprint saturnalia                                                                                                            november 2024",
+      "stimulated series a and series b funding rounds to raise more than 6 lakhs in the competition via showing \nfuture projected growth of more than 2 cr. using data analytics tools  \nfinalist, innokshetra nit kurukshetra                                                                                                    september 2024",
+      "ranked in top 5 out of 450+ teams for pitching homely to a panel of industry experts.     \nbest first year hack, microsoft learning student chapter’s makeathon                                               february 2024",
+      "built risk analysis tool offering personalized cibil scores, mentor connections, and investment portfolios for young \ninvestors."
+    ],
+    "job_preferences": {
+      "job_types": [],
+      "preferred_locations": [
+        "Pune"
+      ],
+      "salary_expectation": null,
+      "remote_preference": false
+    },
+    "search_keywords": {
+      "primary_skills": [
+        "R",
+        "Dart",
+        "Kotlin",
+        "C",
+        "JavaScript",
+        "Node.js",
+        "HTML",
+        "React",
+        "Django",
+        "CSS"
+      ],
+      "job_titles": [
+        "Dart Developer",
+        "Backend Developer",
+        "Backend Engineer",
+        "Mobile App Developer",
+        "Senior R Developer",
+        "Python Developer",
+        "Senior Kotlin Developer",
+        "AI Engineer",
+        "Machine Learning Engineer",
+        "App Developer",
+        "Kotlin Developer",
+        "Flutter Engineer",
+        "Full Stack Engineer",
+        "Django Developer",
+        "Database Developer",
+        "React.js Developer",
+        "ML Engineer",
+        "UI Developer",
+        "JavaScript Developer",
+        "Software Engineer"
+      ],
+      "technologies": [
+        "R",
+        "Dart",
+        "Kotlin",
+        "C",
+        "JavaScript",
+        "Node.js",
+        "HTML",
+        "React",
+        "Django",
+        "CSS",
+        "Flutter",
+        "Firebase",
+        "MongoDB",
+        "GitHub",
+        "Machine Learning"
+      ],
+      "experience_level": "Mid-Level",
+      "locations": [
+        "Pune"
+      ]
+    },
+    "raw_text_preview": " \nA J I N K Y A H O N  \nM A L E , 2 1 | ( + 9 1 ) 8 5 3 0 2 5 1 1 7 7 | \n A H O N _ B E 2 3 @ T H A PA R . E D U |  \n  A J I N K Y A H O N | \n   A J I N K Y A H O N 9 5 0 4    \n EDUCATION    \nEXPERIENCE \nApp Developer & Visual Media Lead, Talkeys | Kotlin, NodeJS, Hosting                                          Jan 2025 – Present  \n• \nLeading app development in Kotlin and cloud hosting for event ticketing platform, driving 500+ bookings \nand 100K+ campaign impressions through visual media strategy. \nApp Development Intern, MoneyChoiceCapital(CA,USA) | Flutter, Firebase, Node.js                June 2025 – Present  \n• \nBuilding mobile platform with real-time sync, customer acquisition, and analytics features, targeting 50+ \nUS-based enterprise clients. \nVisual Media Intern, Cosa Nostra | Social Media Strategy, Brand Management                              April 2025 – Present \n• \nRan multi-platform campaigns reaching 1M+ organically in 30 days; boosted engagement by 70% through \nhigh-im"
+  }
+}

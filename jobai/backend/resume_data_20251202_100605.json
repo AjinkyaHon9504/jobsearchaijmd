@@ -1,0 +1,146 @@
+{
+  "filename": "ajinkyanatwest.pdf",
+  "processed_at": "2025-12-02T10:06:05.153263",
+  "data": {
+    "contact_info": {
+      "name": "Ajinkya Dipak Hon",
+      "email": "ajinkyahon090504@gmail.com",
+      "phone": "8530251177",
+      "location": null,
+      "linkedin": "https://linkedin.com/in/ajinkyahon",
+      "github": "https://github.com/AjinkyaHon9504"
+    },
+    "skills": {
+      "programming_languages": [
+        "Go",
+        "Dart",
+        "Python",
+        "C",
+        "JavaScript"
+      ],
+      "web_technologies": [
+        "Node.js",
+        "React"
+      ],
+      "mobile_development": [
+        "Flutter"
+      ],
+      "databases": [
+        "Firebase",
+        "MongoDB"
+      ],
+      "cloud_devops": [
+        "Git",
+        "GitHub"
+      ],
+      "data_science_ai": [],
+      "other_tools": [
+        "Postman",
+        "Agile"
+      ],
+      "all_skills": [
+        "Go",
+        "Dart",
+        "Python",
+        "C",
+        "JavaScript",
+        "Node.js",
+        "React",
+        "Flutter",
+        "Firebase",
+        "MongoDB",
+        "Git",
+        "GitHub",
+        "Postman",
+        "Agile"
+      ]
+    },
+    "experience": {
+      "total_years": 3.6,
+      "positions": [
+        "Computer Engineer",
+        "Creatives Lead",
+        "Strategy\nLead"
+      ]
+    },
+    "education": [
+      {
+        "degree": "bachelor",
+        "year": "2023",
+        "cgpa": null
+      }
+    ],
+    "projects": [
+      "icanworkon - workforce management platform | flutter, firebase, node.js, data analytics\njuly 2025",
+      "designed and developed data-driven workforce scheduling platform targeting $2b+ smb market, implementing smart algorithms for\nshift optimization and resource allocation across multiple industries",
+      "built comprehensive data management system with real-time analytics, projected to serve 10k+ users within 6 months through\nscalable architecture and business intelligence integration\nhomely - digital operations platform | react.js, flutter, firebase, payment integration\nseptember 2024",
+      "delivered cross-platform product solution digitizing operational workflows, implementing firebase-based data synchronization to\nimprove task tracking efficiency by 15% and reduce manual processes",
+      "integrated payment gateway and analytics dashboard, increasing conversion rates by 30% through data-driven optimization and user"
+    ],
+    "job_preferences": {
+      "job_types": [],
+      "preferred_locations": [
+        "Remote"
+      ],
+      "salary_expectation": null,
+      "remote_preference": true
+    },
+    "search_keywords": {
+      "primary_skills": [
+        "Go",
+        "Dart",
+        "Python",
+        "C",
+        "JavaScript",
+        "Node.js",
+        "React",
+        "Flutter",
+        "Firebase",
+        "MongoDB"
+      ],
+      "job_titles": [
+        "Python Engineer",
+        "Dart Developer",
+        "Backend Developer",
+        "Backend Engineer",
+        "Mobile App Developer",
+        "Python Developer",
+        "Senior Go Developer",
+        "Senior Python Developer",
+        "App Developer",
+        "Flutter Engineer",
+        "Database Developer",
+        "React.js Developer",
+        "UI Developer",
+        "JavaScript Developer",
+        "Mobile Developer",
+        "React Developer",
+        "Cross-Platform Developer",
+        "Mobile Engineer",
+        "Node.js Developer",
+        "Go Developer"
+      ],
+      "technologies": [
+        "Go",
+        "Dart",
+        "Python",
+        "C",
+        "JavaScript",
+        "Node.js",
+        "React",
+        "Flutter",
+        "Firebase",
+        "MongoDB",
+        "Git",
+        "GitHub",
+        "Postman",
+        "Agile"
+      ],
+      "experience_level": "Mid-Level",
+      "locations": [
+        "Remote"
+      ]
+    },
+    "raw_text_preview": "Ajinkya Dipak Hon\n8530251177 | ajinkyahon090504@gmail.com | linkedin.com/in/ajinkyahon | github.com/AjinkyaHon9504\nEducation\nThapar University, Patiala\nAugust 2023 – Present\nBachelor of Technology in Electronics and Computer Engineering\nCGPA: 7.91/10\nExperience\nMoneyChoiceCapital (CA, USA)\nJune 2025 – Present\nApplication Development Intern\nRemote\n• Developing scalable financial platform with 9 core modules serving 10K+ users and 50+ enterprises, implementing data-driven product\nroadmap and business architecture to support $1M+ transaction volume\n• Built real-time data integration pipelines and analytics dashboards, improving customer onboarding efficiency by 30% through data\nquality management and process optimization\n• Collaborated with cross-functional teams to define product requirements, prioritize features, and deliver configurable solutions using\nlow-code development tools\nCosa Nostra, Live Empire Ent\nApril 2025 – June 2025\nProduct Management Intern\nRemote\n• Executed data-informe"
+  }
+}

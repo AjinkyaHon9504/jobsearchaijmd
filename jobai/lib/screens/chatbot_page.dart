@@ -1,9 +1,12 @@
+// lib/pages/chatbot_page.dart
 import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart'; // recommended: add flutter_dotenv to load API key
 import '../widgets/chat_message.dart';
-import '../app_globals.dart';
 import '../services/api_service.dart';
+import '../services/gemini_service.dart';
 import '../models/resume_data.dart';
 
 class ChatbotPage extends StatefulWidget {
@@ -33,11 +36,25 @@ class _ChatbotPageState extends State<ChatbotPage> {
   ResumeData? _resumeData;
   bool _showPinnedResume = false;
 
+  late final GeminiService _geminiService;
+
   @override
   void initState() {
     super.initState();
     _checkBackendHealth();
-    
+
+    // Load API key from env (flutter_dotenv). If you don't use dotenv,
+    // pass the API key safely when creating GeminiService.
+    final apiKey = dotenv.env['GEMINI_API_KEY'];
+
+    if (apiKey == null || apiKey.trim().isEmpty) {
+      throw Exception(
+        "❌ GEMINI_API_KEY missing — Add it in your .env file before running the app.",
+      );
+    }
+
+    _geminiService = GeminiService(apiKey: apiKey.trim());
+
     if (widget.initialResumeData != null) {
       _resumeData = widget.initialResumeData;
       _uploadedFileName = widget.uploadedFileName;
@@ -47,6 +64,12 @@ class _ChatbotPageState extends State<ChatbotPage> {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         if (_resumeData != null) {
           _showResumeDataSummary(_resumeData!);
+          // Start a fresh Gemini chat with resume context
+          try {
+            _geminiService.startNewChat(_resumeData!, jobTitle: null);
+          } catch (e) {
+            print('Gemini start chat error: $e');
+          }
         }
       });
     }
@@ -56,7 +79,7 @@ class _ChatbotPageState extends State<ChatbotPage> {
     try {
       bool isHealthy = await _apiService.checkHealth();
       if (!mounted) return;
-      
+
       if (isHealthy) {
         print('✅ Backend is running');
         ScaffoldMessenger.of(context).showSnackBar(
@@ -108,7 +131,7 @@ class _ChatbotPageState extends State<ChatbotPage> {
   @override
   void didUpdateWidget(ChatbotPage oldWidget) {
     super.didUpdateWidget(oldWidget);
-    if (widget.initialResumeData != null && 
+    if (widget.initialResumeData != null &&
         widget.initialResumeData != oldWidget.initialResumeData) {
       setState(() {
         _resumeData = widget.initialResumeData;
@@ -118,22 +141,23 @@ class _ChatbotPageState extends State<ChatbotPage> {
         _messages.clear();
       });
       _showResumeDataSummary(widget.initialResumeData!);
+      // Reinitialize Gemini context
+      _geminiService.startNewChat(widget.initialResumeData!, jobTitle: null);
     }
   }
 
   Future<void> _pickAndProcessPDF() async {
     print('📂 [ChatbotPage] Opening file picker...');
-    
-    // Show loading immediately
+
     setState(() {
       _isProcessing = true;
     });
-    
+
     try {
       FilePickerResult? result = await FilePicker.platform.pickFiles(
         type: FileType.custom,
         allowedExtensions: ['pdf'],
-        withData: true, // IMPORTANT: Force loading bytes for web
+        withData: true,
       );
 
       if (result == null) {
@@ -144,9 +168,6 @@ class _ChatbotPageState extends State<ChatbotPage> {
         return;
       }
 
-      print('✅ [ChatbotPage] File selected: ${result.files.single.name}');
-
-      // On web, we MUST use bytes (path is not available)
       if (result.files.single.bytes == null) {
         print('❌ [ChatbotPage] No bytes available');
         ScaffoldMessenger.of(context).showSnackBar(
@@ -182,26 +203,13 @@ class _ChatbotPageState extends State<ChatbotPage> {
         ),
       );
 
-      print('📤 [ChatbotPage] Sending to backend...');
       ResumeData resumeData;
-      
-      // Try bytes first (works on all platforms including web)
-      if (result.files.single.bytes != null) {
-        final bytes = result.files.single.bytes!;
-        final name = result.files.single.name;
-        print('📄 Using bytes: ${bytes.length} bytes, name: $name');
-        resumeData = await _apiService.extractResumeFromBytes(bytes, name);
-      } else if (result.files.single.path != null) {
-        // Fallback to path (only works on mobile/desktop)
-        File pdfFile = File(result.files.single.path!);
-        print('📄 Using file path: ${pdfFile.path}');
-        resumeData = await _apiService.extractResume(pdfFile);
-      } else {
-        throw Exception('No file path or bytes available');
-      }
+      final bytes = result.files.single.bytes!;
+      final name = result.files.single.name;
+      resumeData = await _apiService.extractResumeFromBytes(bytes, name);
 
       print('✅ [ChatbotPage] Resume parsed successfully!');
-      
+
       setState(() {
         _resumeData = resumeData;
         _isProcessing = false;
@@ -217,16 +225,20 @@ class _ChatbotPageState extends State<ChatbotPage> {
       );
 
       _showResumeDataSummary(resumeData);
-      
+
+      // IMPORTANT: start Gemini chat session with resume context
+      try {
+        _geminiService.startNewChat(resumeData, jobTitle: null);
+      } catch (e) {
+        print('Error starting Gemini chat: $e');
+      }
     } catch (e) {
       print('❌ [ChatbotPage] Error: $e');
-      
       setState(() {
         _isProcessing = false;
         _uploadedFileName = null;
       });
 
-      // Show detailed error dialog
       if (mounted) {
         showDialog(
           context: context,
@@ -237,13 +249,21 @@ class _ChatbotPageState extends State<ChatbotPage> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text('Error details:', style: TextStyle(fontWeight: FontWeight.bold)),
+                  const Text(
+                    'Error details:',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                   const SizedBox(height: 8),
                   Text(e.toString()),
                   const SizedBox(height: 16),
-                  const Text('Troubleshooting:', style: TextStyle(fontWeight: FontWeight.bold)),
+                  const Text(
+                    'Troubleshooting:',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                   const SizedBox(height: 8),
-                  const Text('1. Make sure backend is running:\n   uvicorn main:app --reload'),
+                  const Text(
+                    '1. Make sure backend is running:\n   uvicorn main:app --reload',
+                  ),
                   const SizedBox(height: 4),
                   const Text('2. Check backend URL in api_service.dart'),
                   const SizedBox(height: 4),
@@ -271,7 +291,8 @@ class _ChatbotPageState extends State<ChatbotPage> {
       setState(() {
         _messages.add(
           ChatMessage(
-            text: '❌ Error processing resume. Please check if the backend is running.',
+            text:
+                '❌ Error processing resume. Please check if the backend is running.',
             isUser: false,
           ),
         );
@@ -280,7 +301,8 @@ class _ChatbotPageState extends State<ChatbotPage> {
   }
 
   void _showResumeDataSummary(ResumeData data) {
-    String summary = '''
+    String summary =
+        '''
 ✅ Resume processed successfully!
 
 📋 Name: ${data.contactInfo.name ?? 'Not found'}
@@ -358,50 +380,130 @@ I'm ready to help you find jobs! What are you looking for?
       _showPinnedResume = false;
     });
     widget.onResumeCleared?.call();
-    
-    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(content: Text('Resume cleared')),
+
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(const SnackBar(content: Text('Resume cleared')));
+  }
+
+  /// Parses incoming user chat and routes to the right handler:
+  /// - "add job" or "add job title" -> adds custom job
+  /// - "my new job is X" -> sets new target job and updates context
+  /// - "company <name> jobs" or "jobs at <name>" -> asks Gemini for company job titles
+  /// - else -> normal Gemini chat
+  Future<void> _handleUserMessage(String message) async {
+    final lower = message.toLowerCase().trim();
+
+    // 1) Add custom job titles
+    final addJobRegex = RegExp(
+      r'^(add|save)\s+(job(?:\s+title)?\s+)?[:\-]?\s*(.+)$',
+      caseSensitive: false,
     );
+    final myNewJobRegex = RegExp(
+      r'^(my new job (is|:))\s*(.+)$',
+      caseSensitive: false,
+    );
+    final companyJobsRegex = RegExp(
+      r'(?:(?:jobs at|company|roles at)\s+)(.+)$',
+      caseSensitive: false,
+    );
+
+    // Priority: explicit "add" command
+    final addMatch = addJobRegex.firstMatch(message);
+    if (addMatch != null) {
+      final title = addMatch.group(3)?.trim() ?? '';
+      if (title.isEmpty) {
+        _appendBotMessage(
+          'Please tell me the job title to add, e.g. "Add Data Engineer".',
+        );
+        return;
+      }
+      // Save locally and optionally update Gemini context
+      final result = await _geminiService.addCustomJobTitle(
+        title,
+        resume: _resumeData,
+      );
+      _appendBotMessage(result);
+      return;
+    }
+
+    // "My new job is X" -> update target job and reset context
+    final myNewJobMatch = myNewJobRegex.firstMatch(message);
+    if (myNewJobMatch != null) {
+      final title = myNewJobMatch.group(3)?.trim() ?? '';
+      if (title.isEmpty) {
+        _appendBotMessage(
+          'Please provide the job title, e.g. "My new job is Product Manager".',
+        );
+        return;
+      }
+      if (_resumeData != null) {
+        _geminiService.startNewChat(_resumeData!, jobTitle: title);
+      }
+      _appendBotMessage(
+        'Target job updated to "$title". I will use this when evaluating suggestions.',
+      );
+      return;
+    }
+
+    // Company jobs query (e.g., "job titles in Google", "jobs at Microsoft")
+    final companyMatch = companyJobsRegex.firstMatch(lower);
+    if (companyMatch != null) {
+      final company = companyMatch.group(1)?.trim() ?? '';
+      if (company.isEmpty) {
+        _appendBotMessage(
+          'Please specify the company name, e.g. "Jobs at Google".',
+        );
+        return;
+      }
+      if (_resumeData == null) {
+        _appendBotMessage(
+          'Upload your resume first so I can evaluate suitability.',
+        );
+        return;
+      }
+
+      _appendBotMessage(
+        'Looking up typical job titles at "$company" and evaluating them for you...',
+      );
+      setState(() => _isProcessing = true);
+      final reply = await _geminiService.getCompanyJobTitles(
+        company,
+        _resumeData!,
+      );
+      setState(() => _isProcessing = false);
+      _appendBotMessage(reply);
+      return;
+    }
+
+    // Default: send message to Gemini
+    setState(() => _isProcessing = true);
+    final reply = await _geminiService.sendMessage(message);
+    setState(() => _isProcessing = false);
+    _appendBotMessage(reply);
+  }
+
+  void _appendUserMessage(String text) {
+    setState(() {
+      _messages.add(ChatMessage(text: text, isUser: true));
+    });
+  }
+
+  void _appendBotMessage(String text) {
+    setState(() {
+      _messages.add(ChatMessage(text: text, isUser: false));
+    });
   }
 
   void _sendMessage() {
-    if (_messageController.text.trim().isEmpty) return;
-
-    setState(() {
-      _messages.add(ChatMessage(text: _messageController.text, isUser: true));
-    });
-
-    String userQuery = _messageController.text;
+    final text = _messageController.text.trim();
+    if (text.isEmpty) return;
     _messageController.clear();
 
-    Future.delayed(const Duration(seconds: 1), () {
-      String response = _generateResponse(userQuery);
-      setState(() {
-        _messages.add(ChatMessage(text: response, isUser: false));
-      });
-    });
-  }
+    _appendUserMessage(text);
 
-  String _generateResponse(String query) {
-    if (_resumeData == null) {
-      return "Please upload your resume first.";
-    }
-
-    query = query.toLowerCase();
-
-    if (query.contains('skill')) {
-      return "Your top skills:\n${_resumeData!.skills.allSkills.take(10).map((s) => '• $s').join('\n')}";
-    }
-
-    if (query.contains('job') || query.contains('position')) {
-      return "Suitable job titles:\n${_resumeData!.searchKeywords.jobTitles.map((t) => '• $t').join('\n')}";
-    }
-
-    if (query.contains('experience')) {
-      return "You have ${_resumeData!.experience.totalYears} years of experience.\nPositions: ${_resumeData!.experience.positions.join(', ')}";
-    }
-
-    return "I'm analyzing job opportunities. Check the Dashboard tab!";
+    // Don't block UI: handle asynchronously
+    _handleUserMessage(text);
   }
 
   @override
@@ -410,7 +512,6 @@ I'm ready to help you find jobs! What are you looking for?
       appBar: AppBar(
         title: const Text('AI Job Assistant'),
         actions: [
-          // Backend status indicator
           if (_isProcessing)
             const Padding(
               padding: EdgeInsets.all(16.0),
@@ -447,7 +548,6 @@ I'm ready to help you find jobs! What are you looking for?
         children: [
           if (_resumeData != null && _showPinnedResume)
             _buildPinnedResume(_resumeData!),
-            
           if (_uploadedFileName == null)
             Expanded(
               child: Center(
@@ -479,14 +579,16 @@ I'm ready to help you find jobs! What are you looking for?
                     const SizedBox(height: 30),
                     ElevatedButton.icon(
                       onPressed: _isProcessing ? null : _pickAndProcessPDF,
-                      icon: _isProcessing 
+                      icon: _isProcessing
                           ? const SizedBox(
                               width: 20,
                               height: 20,
                               child: CircularProgressIndicator(strokeWidth: 2),
                             )
                           : const Icon(Icons.picture_as_pdf),
-                      label: Text(_isProcessing ? 'Processing...' : 'Upload Resume (PDF)'),
+                      label: Text(
+                        _isProcessing ? 'Processing...' : 'Upload Resume (PDF)',
+                      ),
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 30,
@@ -512,7 +614,6 @@ I'm ready to help you find jobs! What are you looking for?
                 itemBuilder: (context, index) => _messages[index],
               ),
             ),
-
           if (_isChatEnabled && !_isProcessing)
             Container(
               padding: const EdgeInsets.all(16),
@@ -532,7 +633,8 @@ I'm ready to help you find jobs! What are you looking for?
                     child: TextField(
                       controller: _messageController,
                       decoration: InputDecoration(
-                        hintText: 'Ask about jobs...',
+                        hintText:
+                            'Ask about jobs (e.g., "Add Data Engineer", "Jobs at Google")',
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(25),
                         ),

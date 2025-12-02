@@ -1,0 +1,162 @@
+{
+  "filename": "ajinkyaresume (1).pdf",
+  "processed_at": "2025-12-02T10:10:07.927132",
+  "data": {
+    "contact_info": {
+      "name": "Ajinkya Dipak Hon",
+      "email": "ajinkyahon090504@gmail.com",
+      "phone": "8530251177",
+      "location": "India",
+      "linkedin": "https://linkedin.com/in/ajinkyahon",
+      "github": "https://github.com/AjinkyaHon9504"
+    },
+    "skills": {
+      "programming_languages": [
+        "Go",
+        "Dart",
+        "Python",
+        "C",
+        "JavaScript"
+      ],
+      "web_technologies": [
+        "Node.js",
+        "React"
+      ],
+      "mobile_development": [
+        "Flutter"
+      ],
+      "databases": [
+        "Firebase",
+        "MongoDB"
+      ],
+      "cloud_devops": [
+        "GCP",
+        "AWS",
+        "Git",
+        "Azure",
+        "GitHub"
+      ],
+      "data_science_ai": [
+        "Machine Learning"
+      ],
+      "other_tools": [
+        "Postman",
+        "Agile",
+        "Scrum"
+      ],
+      "all_skills": [
+        "Go",
+        "Dart",
+        "Python",
+        "C",
+        "JavaScript",
+        "Node.js",
+        "React",
+        "Flutter",
+        "Firebase",
+        "MongoDB",
+        "GCP",
+        "AWS",
+        "Git",
+        "Azure",
+        "GitHub",
+        "Machine Learning",
+        "Postman",
+        "Agile",
+        "Scrum"
+      ]
+    },
+    "experience": {
+      "total_years": 4.6,
+      "positions": [
+        "Institute of Engineer",
+        "Computer Engineer",
+        "Creatives Lead",
+        "Suite\nLead"
+      ]
+    },
+    "education": [
+      {
+        "degree": "b.tech",
+        "year": "2023",
+        "cgpa": null
+      }
+    ],
+    "projects": [
+      "icanworkon – workforce management platform (ai-enabled) | flutter, firebase, node.js, cloud\njul 2025",
+      "designed data-driven workforce scheduling system implementing predictive algorithms for shift optimization and resource allocation",
+      "deployed real-time analytics dashboard on cloud infrastructure projected to serve 10k+ smb users in 6 months\nhomely – digital operations platform | react.js, firebase, payment apis\nsep 2024",
+      "digitized operational workflows integrating payment gateway and analytics dashboard, increasing efficiency by 30%",
+      "secured simulated funding of 6+ lakhs by presenting a data-driven business case demonstrating analytical problem-solving\nfinalist – innokshetra, nit kurukshetra\nsep 2024",
+      "ranked top 5 among 450+ teams for innovative product pitch\nexecutive committee member – thapar food festival\njan 2025 – may 2025",
+      "led a cross-functional team of 25+ members implementing content strategy generating 300k+ views\nexecutive member – microsoft learn student chapter\nsep 2023 – sep 2024",
+      "organized and facilitated workshops and events on emerging technologies, increasing chapter participation by 40%\nextra-curricular activities & interests\nactive in sports and creative pursuits including university-level table tennis, adobe creative suite and video editing, ai-driven content\ngeneration, leadership and team management, event and brand management, trekking, photography, and editing."
+    ],
+    "job_preferences": {
+      "job_types": [],
+      "preferred_locations": [
+        "Remote"
+      ],
+      "salary_expectation": null,
+      "remote_preference": true
+    },
+    "search_keywords": {
+      "primary_skills": [
+        "Go",
+        "Dart",
+        "Python",
+        "C",
+        "JavaScript",
+        "Node.js",
+        "React",
+        "Flutter",
+        "Firebase",
+        "MongoDB"
+      ],
+      "job_titles": [
+        "Python Engineer",
+        "Dart Developer",
+        "AWS Developer",
+        "Cloud Engineer",
+        "DevOps Engineer",
+        "Backend Developer",
+        "Backend Engineer",
+        "Mobile App Developer",
+        "Python Developer",
+        "Senior Go Developer",
+        "AI Engineer",
+        "Machine Learning Engineer",
+        "Senior Python Developer",
+        "GCP Developer",
+        "App Developer",
+        "Flutter Engineer",
+        "Database Developer",
+        "React.js Developer",
+        "ML Engineer",
+        "UI Developer"
+      ],
+      "technologies": [
+        "Go",
+        "Dart",
+        "Python",
+        "C",
+        "JavaScript",
+        "Node.js",
+        "React",
+        "Flutter",
+        "Firebase",
+        "MongoDB",
+        "GCP",
+        "AWS",
+        "Git",
+        "Azure",
+        "GitHub"
+      ],
+      "experience_level": "Mid-Level",
+      "locations": [
+        "Remote"
+      ]
+    },
+    "raw_text_preview": "Ajinkya Dipak Hon\n8530251177 | ajinkyahon090504@gmail.com linkedin.com/in/ajinkyahon | github.com/AjinkyaHon9504\nEducation\nThapar Institute of Engineering & Technology, Patiala\nAug 2023 – Present\nB.Tech in Electronics and Computer Engineering (ECE-Comp)\nCGPA: 7.91/10\nExperience\nMoneyChoiceCapital (CA, USA)\nJun 2025 – Present\nApplication Development Intern\nRemote\n• Developing scalable financial platform with AI-driven analytics modules supporting 10K+ users and 50+ enterprises, enabling $1M+\ntransaction volume\n• Built real-time data pipelines and dashboards on cloud infrastructure (Firebase/Node.js) improving onboarding efficiency by 30%\n• Collaborated with cross-functional teams to integrate ML-based recommendation prototypes into product roadmap\nCosa Nostra, Live Empire Ent\nApr 2025 – Jun 2025\nProduct Management Intern\nRemote\n• Executed data-informed product strategies analyzing 15K+ engagement data points to achieve 1M+ organic reach in 30 days\n• Applied Agile Scrum principles to man"
+  }
+}
